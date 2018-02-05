@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour {
 
+
     //used for button Mathematics on the Main Menu Scene
     public void mathematicsButton()
     {
@@ -43,13 +44,19 @@ public class mainMenu : MonoBehaviour {
     public void mathematicsDifficultyNormal()
     {
         PlayerPrefs.SetInt("MathGameDifficulty", 1);
-        SceneManager.LoadScene("mathScene1", LoadSceneMode.Single);
+        SceneManager.LoadScene("mathScene"+Random.Range(1,2), LoadSceneMode.Single);
     }
 
     public void mathematicsDifficultyHard()
     {
         PlayerPrefs.SetInt("MathGameDifficulty", 2);
-        SceneManager.LoadScene("mathScene1", LoadSceneMode.Single);
+        SceneManager.LoadScene("mathScene" + Random.Range(1, 2), LoadSceneMode.Single);
+    }
+
+    public void mathematicsDifficultyExpert()
+    {
+        PlayerPrefs.SetInt("MathGameDifficulty", 3);
+        SceneManager.LoadScene("mathScene" + Random.Range(1, 2), LoadSceneMode.Single);
     }
 
 

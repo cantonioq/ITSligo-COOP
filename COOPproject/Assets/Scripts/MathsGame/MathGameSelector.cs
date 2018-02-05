@@ -14,15 +14,13 @@ using UnityEngine.UI;
 
 public class MathGameSelector : MonoBehaviour {
 
-    private bool MathGameAdd = false;
-    private bool MathGameSub = false;
-    private bool MathGameMulti = false;
     private int getMathGame;
-
-    private bool newQuestion = true;
+    private int getMathDifficulty;
+    private bool newQuestion = false;
 
     public Text displayQuestion;
-    //public string displayOnUItext;
+    public Text answer; //for testing will be removed
+    public Text rightWrongText;
 
     public InputField inputFieldAnswer;
 
@@ -30,101 +28,121 @@ public class MathGameSelector : MonoBehaviour {
     private int valueTwo;
     private int valueTotal;
     int inputIntConvert;
+    string plusAddMultiVariable;
 
     // Use this for initialization
-    void Start () {
-
+    void Start ()
+    {
         getMathGame = PlayerPrefs.GetInt("MathGame");
-
-        if(getMathGame == 1)
-        {
-            MathGameAdd = true;
-        }
-
-        if(getMathGame == 2)
-        {
-            MathGameSub = true;
-        }
-
-        if(getMathGame == 3)
-        {
-            MathGameMulti = true;
-        }
-
-        Debug.Log("the Mathgame value is: " + getMathGame);
-		
+        getMathDifficulty = PlayerPrefs.GetInt("MathGameDifficulty");
+        Calculator();		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         if (newQuestion == true)
         {
             Calculator();
         }
-        
-	}
+        displayQuestion.text = valueOne.ToString() + plusAddMultiVariable + valueTwo.ToString();
+        answer.text = valueTotal.ToString();//for debuging will be removed later
 
+        
+    }
+
+    private void MathGameDifficulty()
+    {
+        if(getMathDifficulty == 1)
+        {
+            valueOne = Random.Range(1, 10);
+            valueTwo = Random.Range(1, 10);
+        }
+
+        if (getMathDifficulty == 2)
+        {
+            valueOne = Random.Range(-1, 50);
+            valueTwo = Random.Range(-1, 50);
+        }
+
+        if (getMathDifficulty == 3)
+        {
+            valueOne = Random.Range(-100, 100);
+            valueTwo = Random.Range(-100, 100);
+        }
+    }
 
     public void Calculator()
     {
-
-        if (MathGameAdd == true)
-        {
-            newQuestion = false;
-            valueOne = Random.Range(-50, 100);
-            valueTwo = Random.Range(-50, 100);
-            valueTotal = valueOne + valueTwo;
-            Debug.Log("ok");
-
-            displayQuestion.text = valueOne.ToString() + " + " + valueTwo.ToString();
-
-            //if(Input.GetKeyDown("enter"))
-            //{
-                if (inputIntConvert == valueTotal)
-                {
-                    displayQuestion.text = "yes!!";
-                        Debug.Log("YES");
-                }
-
-                else
-                {
-                    displayQuestion.text = "SORRY";
-                }
-            //}
-
-
-        }
-
-        if(MathGameSub == true)
-        {
-
-        }
-
-        if(MathGameMulti == true)
-        {
-
-        }
-        //newQuestion = true;
-    }
-
-    //the code below is to grab the input from the textbox
-    private void inputSubmitAnswer()
-    {
+        newQuestion = false;
         inputIntConvert = int.Parse(inputFieldAnswer.text); //for integer 
-        Debug.Log("Input Submitted" + inputFieldAnswer.text + "::::  " + inputIntConvert );
         inputFieldAnswer.text = ""; //Clear Inputfield text
         inputFieldAnswer.ActivateInputField(); //Re-focus on the input field
         inputFieldAnswer.Select();//Re-focus on the input field
 
-        
+        if (getMathGame == 1)
+        {
+            if (inputIntConvert == valueTotal)
+                {
+                    Debug.Log("Right Answer");
+                rightWrongText.text = "Way to go!";
+                }
 
+            else
+                {
+                    Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
+                    rightWrongText.text = "oh no!";
+                }
+
+            plusAddMultiVariable = " + ";
+            MathGameDifficulty();
+            valueTotal = valueOne + valueTwo;
+        }
+
+        if(getMathGame == 2)
+        {
+            if (inputIntConvert == valueTotal)
+            {
+                Debug.Log("Right Answer");
+                rightWrongText.text = "way to go";
+            }
+
+            else
+            {
+                Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
+                rightWrongText.text = "oh no!";
+            }
+
+            plusAddMultiVariable = " - ";
+            MathGameDifficulty();
+            valueTotal = valueOne - valueTwo;
+        }
+
+        if(getMathGame == 3)
+        {
+            if (inputIntConvert == valueTotal)
+            {
+                Debug.Log("Right Answer");
+                rightWrongText.text = "way to go";
+            }
+
+            else
+            {
+                Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
+                rightWrongText.text = "oh no!";
+            }
+
+            plusAddMultiVariable = " * ";
+            MathGameDifficulty();
+            valueTotal = valueOne * valueTwo;
+        }
+        newQuestion = true;
     }
 
     void OnEnable()
     {
         //Register InputField Events
-        inputFieldAnswer.onEndEdit.AddListener(delegate { inputSubmitAnswer(); });
+        inputFieldAnswer.onEndEdit.AddListener(delegate { Calculator(); });
     }
 
     void OnDisable()
@@ -133,4 +151,5 @@ public class MathGameSelector : MonoBehaviour {
         inputFieldAnswer.onEndEdit.RemoveAllListeners();
         inputFieldAnswer.onValueChanged.RemoveAllListeners();
     }
+
 }
