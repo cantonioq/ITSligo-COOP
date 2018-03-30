@@ -41,14 +41,17 @@ public class MathGameSelector : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //will take a random string and display it when the player gets the right answer
+        gotRightMessage = gotRight[Random.Range(0, gotRight.Length)];
+        //will take a random string and display it when the player gets the right answer
+        gotWrongMessage = gotWrong[Random.Range(0, gotRight.Length)];
+
         if (newQuestion == true)
         {
             Calculator();
         }
         displayQuestion.text = valueOne.ToString() + plusAddMultiVariable + valueTwo.ToString();
-        answer.text = valueTotal.ToString();//for debuging will be removed later
-
-        
+        answer.text = valueTotal.ToString();//for debuging will be removed later       
     }
 
     private void MathGameDifficulty()
@@ -80,20 +83,20 @@ public class MathGameSelector : MonoBehaviour {
         inputFieldAnswer.ActivateInputField(); //Re-focus on the input field
         inputFieldAnswer.Select();//Re-focus on the input field
 
+        if (inputIntConvert == valueTotal)
+        {
+            //displays a message that player got the answer right
+            rightWrongText.text = gotRightMessage;
+        }
+
+        else
+        {
+            //displays a message that the player got the answer wrong
+            rightWrongText.text = gotWrongMessage;
+        }
+
         if (getMathGame == 1)
         {
-            if (inputIntConvert == valueTotal)
-                {
-                    Debug.Log("Right Answer");
-                rightWrongText.text = "Way to go!";
-                }
-
-            else
-                {
-                    Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
-                    rightWrongText.text = "oh no!";
-                }
-
             plusAddMultiVariable = " + ";
             MathGameDifficulty();
             valueTotal = valueOne + valueTwo;
@@ -101,18 +104,6 @@ public class MathGameSelector : MonoBehaviour {
 
         if(getMathGame == 2)
         {
-            if (inputIntConvert == valueTotal)
-            {
-                Debug.Log("Right Answer");
-                rightWrongText.text = "way to go";
-            }
-
-            else
-            {
-                Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
-                rightWrongText.text = "oh no!";
-            }
-
             plusAddMultiVariable = " - ";
             MathGameDifficulty();
             valueTotal = valueOne - valueTwo;
@@ -120,18 +111,6 @@ public class MathGameSelector : MonoBehaviour {
 
         if(getMathGame == 3)
         {
-            if (inputIntConvert == valueTotal)
-            {
-                Debug.Log("Right Answer");
-                rightWrongText.text = "way to go";
-            }
-
-            else
-            {
-                Debug.Log("SORRY inputAwnser: " + inputIntConvert + "  valueTotal: " + valueTotal);
-                rightWrongText.text = "oh no!";
-            }
-
             plusAddMultiVariable = " * ";
             MathGameDifficulty();
             valueTotal = valueOne * valueTwo;
