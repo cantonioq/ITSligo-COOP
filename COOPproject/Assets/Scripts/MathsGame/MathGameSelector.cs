@@ -30,6 +30,11 @@ public class MathGameSelector : MonoBehaviour {
     int inputIntConvert;
     string plusAddMultiVariable;
 
+    string gotWrongMessage;
+    string[] gotWrong = { "bad", "Not good" };
+
+    string gotRightMessage;
+    string[] gotRight = { "ok", "good"};
     // Use this for initialization
     void Start ()
     {

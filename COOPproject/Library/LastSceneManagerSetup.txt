@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/UnityChan/Scenes/Locomotion.unity
+- path: Assets/Scenes/MathsGames/mathScene1.unity
   isLoaded: 1
   isActive: 1
