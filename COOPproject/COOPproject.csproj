@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\MainMenu\mainMenu.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathGameSelector.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathPlayer.cs" />
+    <Compile Include="Assets\Scripts\MathsGame\MathPlayerController.cs" />
     <Compile Include="Assets\Scripts\titleScreenScript.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
