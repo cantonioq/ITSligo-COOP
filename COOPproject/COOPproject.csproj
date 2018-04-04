@@ -158,6 +158,8 @@
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Downloaded Unity Store\SkySphere_V1\Examples\Gui.cs" />
+    <Compile Include="Assets\Downloaded Unity Store\SkySphere_V1\Examples\MouseLook.cs" />
     <Compile Include="Assets\Scripts\MainMenu\mainMenu.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathGameSelector.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathPlayerController.cs" />
@@ -251,6 +253,7 @@
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Downloaded Unity Store\SkySphere_V1\Documentation\How to use.txt" />
     <None Include="Assets\Downloaded Unity Store\Stylized Nature Environment\ReadMe.txt" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
