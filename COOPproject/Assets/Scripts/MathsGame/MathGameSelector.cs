@@ -13,8 +13,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MathGameSelector : MonoBehaviour {
-
+    //variable for game type, Addition, Substration or Multiplication
     private int getMathGame;
+    //Difficulty of the game, if difficulty higher, harder numbers to calculate
     private int getMathDifficulty;
     private bool newQuestion = false;
 
