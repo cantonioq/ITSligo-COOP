@@ -78,6 +78,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Downloaded Unity Store\CasualGameUI\Demo\DemoToggle.cs" />
+    <Compile Include="Assets\Downloaded Unity Store\CasualGameUI\Demo\MultiImageButton.cs" />
+    <Compile Include="Assets\Downloaded Unity Store\CasualGameUI\Demo\ShowNextOnClick.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -161,9 +164,11 @@
     <Compile Include="Assets\Downloaded Unity Store\SkySphere_V1\Examples\Gui.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SkySphere_V1\Examples\MouseLook.cs" />
     <Compile Include="Assets\Scripts\MainMenu\mainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenuMusicPlayer.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathGameSelector.cs" />
     <Compile Include="Assets\Scripts\MathsGame\MathPlayerController.cs" />
     <Compile Include="Assets\Scripts\MathsGame\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\MathsGame\RandomMusicPlayer.cs" />
     <Compile Include="Assets\Scripts\titleScreenScript.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
@@ -173,6 +178,7 @@
     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Downloaded Unity Store\CasualGameUI\Fonts\1001fonts-riffic-eula.txt" />
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Foliage\Materials\Vegetation.shader" />
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />

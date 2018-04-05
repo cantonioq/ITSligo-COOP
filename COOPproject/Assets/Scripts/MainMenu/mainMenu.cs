@@ -43,20 +43,38 @@ public class mainMenu : MonoBehaviour {
     //used for buttons in the Mathematics Menu Difficulty scene
     public void mathematicsDifficultyNormal()
     {
+        //this will switch the bool to true for stop music which will notify the 
+        //MainMenuMusicPlayer script to destroy itself with the object attach to it to stop the main menu music
+        GameObject.Find("MusicPlayer").GetComponent<MainMenuMusicPlayer>().stopMusic = true;
+        //sets the difficulty to normal
         PlayerPrefs.SetInt("MathGameDifficulty", 1);
-        SceneManager.LoadScene("mathScene"+Random.Range(1,2), LoadSceneMode.Single);
+        //will load a random mathScene for the player using mathScene + random
+        //e.g. mathScene1, mathScene3 etc...
+        SceneManager.LoadScene("mathScene" + Random.Range(1,3), LoadSceneMode.Single);
     }
 
     public void mathematicsDifficultyHard()
     {
+        //this will switch the bool to true for stop music which will notify the 
+        //MainMenuMusicPlayer script to destroy itself with the object attach to it to stop the main menu music
+        GameObject.Find("MusicPlayer").GetComponent<MainMenuMusicPlayer>().stopMusic = true;
+        //sets the difficulty to difficult
         PlayerPrefs.SetInt("MathGameDifficulty", 2);
-        SceneManager.LoadScene("mathScene" + Random.Range(1, 2), LoadSceneMode.Single);
+        //will load a random mathScene for the player using mathScene + random
+        //e.g. mathScene1, mathScene3 etc...
+        SceneManager.LoadScene("mathScene" + Random.Range(1, 3), LoadSceneMode.Single);
     }
 
     public void mathematicsDifficultyExpert()
     {
+        //this will switch the bool to true for stop music which will notify the 
+        //MainMenuMusicPlayer script to destroy itself with the object attach to it to stop the main menu music
+        GameObject.Find("MusicPlayer").GetComponent<MainMenuMusicPlayer>().stopMusic = true;
+        //sets the diffiuculty to expert
         PlayerPrefs.SetInt("MathGameDifficulty", 3);
-        SceneManager.LoadScene("mathScene" + Random.Range(1, 2), LoadSceneMode.Single);
+        //will load a random mathScene for the player using mathScene + random
+        //e.g. mathScene1, mathScene3 etc...
+        SceneManager.LoadScene("mathScene" + Random.Range(1, 3), LoadSceneMode.Single);
     }
 
 

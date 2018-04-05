@@ -87,12 +87,7 @@ public class PlayerData : MonoBehaviour {
     void DisplayTotalWrong()
     {
         totalWrongDisplay.text = "Total Wrong: " + totalWrong.ToString();
-
-        //GameObject.Find("UI DATA").GetComponent<uiData>().turbo -= 1.0f;
     }
-
-
-    
 
     void Awake()
     {
