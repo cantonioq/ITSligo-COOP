@@ -70,21 +70,28 @@ public class MathPlayerController : MonoBehaviour {
                                                
         velocity = transform.TransformDirection(velocity);
        
-//FOR JUMPING MAY USE LATER
-        if (Input.GetButtonDown("Jump"))
-        {   
-
-           
-            if (currentBaseState.nameHash == locoState)
+        //FOR JUMPING
+        //if the player jump token is greater than one allow jumping with spacebar
+        if (GameObject.Find("PlayerDATA").GetComponent<PlayerData>().jumpToken > 0)
+        {
+            if (Input.GetButtonDown("Jump"))
             {
-             
-                if (!anim.IsInTransition(0))
+                if (currentBaseState.nameHash == locoState)
                 {
-                    rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
-                    anim.SetBool("Jump", true);    
+
+                    if (!anim.IsInTransition(0))
+                    {
+                        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+                        anim.SetBool("Jump", true);
+                        //remove one value from jump token
+                        GameObject.Find("PlayerDATA").GetComponent<PlayerData>().jumpToken -= 1;
+                    }
                 }
             }
+            
         }
+
+
 
 
      

@@ -17,7 +17,7 @@ public class titleScreenScript : MonoBehaviour {
 
     public void startClickButton()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("MathematicsMenu", LoadSceneMode.Single);
     }
 
 }

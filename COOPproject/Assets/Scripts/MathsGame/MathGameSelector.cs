@@ -93,12 +93,16 @@ public class MathGameSelector : MonoBehaviour {
         {
             //displays a message that player got the answer right
             rightWrongText.text = gotRightMessage;
+
+            GameObject.Find("PlayerDATA").GetComponent<PlayerData>().rightAnswerSwitch = true;
         }
 
         else
         {
             //displays a message that the player got the answer wrong
             rightWrongText.text = gotWrongMessage;
+
+            GameObject.Find("PlayerDATA").GetComponent<PlayerData>().wrongAnswerSwitch = true;
         }
 
         if (getMathGame == 1)
