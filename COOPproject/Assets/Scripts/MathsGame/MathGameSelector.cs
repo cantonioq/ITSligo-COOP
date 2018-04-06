@@ -56,8 +56,19 @@ public class MathGameSelector : MonoBehaviour {
         {
             Calculator();
         }
-        displayQuestion.text = valueOne.ToString() + plusAddMultiVariable + valueTwo.ToString();
-        answer.text = valueTotal.ToString();//for debuging will be removed later       
+        displayQuestionFunction();
+        displayAnswer();
+    }
+
+
+    void displayQuestionFunction()
+    {
+        displayQuestion.text = valueOne + plusAddMultiVariable + valueTwo;
+    }
+    //for debuging will be removed later  
+    void displayAnswer()
+    {
+        answer.text = valueTotal.ToString();
     }
 
     private void MathGameDifficulty()

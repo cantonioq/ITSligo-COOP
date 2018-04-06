@@ -50,7 +50,7 @@ public class mainMenu : MonoBehaviour {
         PlayerPrefs.SetInt("MathGameDifficulty", 1);
         //will load a random mathScene for the player using mathScene + random
         //e.g. mathScene1, mathScene3 etc...
-        SceneManager.LoadScene("mathScene" + Random.Range(1,3), LoadSceneMode.Single);
+        SceneManager.LoadScene("loadingScene", LoadSceneMode.Single);
     }
 
     public void mathematicsDifficultyHard()
@@ -62,7 +62,7 @@ public class mainMenu : MonoBehaviour {
         PlayerPrefs.SetInt("MathGameDifficulty", 2);
         //will load a random mathScene for the player using mathScene + random
         //e.g. mathScene1, mathScene3 etc...
-        SceneManager.LoadScene("mathScene" + Random.Range(1, 3), LoadSceneMode.Single);
+        SceneManager.LoadScene("loadingScene", LoadSceneMode.Single);
     }
 
     public void mathematicsDifficultyExpert()
@@ -74,7 +74,7 @@ public class mainMenu : MonoBehaviour {
         PlayerPrefs.SetInt("MathGameDifficulty", 3);
         //will load a random mathScene for the player using mathScene + random
         //e.g. mathScene1, mathScene3 etc...
-        SceneManager.LoadScene("mathScene" + Random.Range(1, 3), LoadSceneMode.Single);
+        SceneManager.LoadScene("loadingScene" , LoadSceneMode.Single);
     }
 
 
