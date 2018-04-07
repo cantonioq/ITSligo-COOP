@@ -41,8 +41,8 @@ public class MathGameSelector : MonoBehaviour {
     {
         getMathGame = PlayerPrefs.GetInt("MathGame");
         getMathDifficulty = PlayerPrefs.GetInt("MathGameDifficulty");
-        Calculator();		
-	}
+        Calculator();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -63,7 +63,7 @@ public class MathGameSelector : MonoBehaviour {
 
     void displayQuestionFunction()
     {
-        displayQuestion.text = valueOne + plusAddMultiVariable + valueTwo;
+        displayQuestion.text = valueOne + plusAddMultiVariable + valueTwo + " = ";
     }
     //for debuging will be removed later  
     void displayAnswer()
