@@ -55,7 +55,8 @@ public class LoadingScreen : MonoBehaviour
 
         // Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
         //AsyncOperation async = Application.LoadLevelAsync(scene);
-        AsyncOperation async = SceneManager.LoadSceneAsync("mathScene" + Random.Range(1, 3));
+        //there is 3 levels yet random range must be between 1 to 4 since, otherwise will never select the level 3
+        AsyncOperation async = SceneManager.LoadSceneAsync("mathScene" + Random.Range(1, 4));
 
 
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.

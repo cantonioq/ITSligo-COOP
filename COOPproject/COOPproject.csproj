@@ -221,6 +221,7 @@
     <Compile Include="Assets\Scripts\MathsGame\RandomMusicPlayer.cs" />
     <Compile Include="Assets\Scripts\MathsGame\newLevelLoader.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\obstacleObject.cs" />
+    <Compile Include="Assets\Scripts\facebookShare.cs" />
     <Compile Include="Assets\Scripts\titleScreenScript.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
