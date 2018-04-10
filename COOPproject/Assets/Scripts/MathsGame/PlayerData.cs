@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour {
 
@@ -29,6 +30,9 @@ public class PlayerData : MonoBehaviour {
     public bool rightAnswerSwitch;
     public bool wrongAnswerSwitch;
 
+    public Text displayTimer;
+    public float timer;
+
     //this variable for the awake function which allows the object which this 
     //script is attached to does not get destroyed when player goes into next scene
     public static PlayerData holder;
@@ -40,6 +44,7 @@ public class PlayerData : MonoBehaviour {
         energy = 3;
         totalRight = 0;
         totalWrong = 0;
+        timer = 60;
 
         rightAnswerSwitch = false;
         wrongAnswerSwitch = false;        	
@@ -52,13 +57,16 @@ public class PlayerData : MonoBehaviour {
         DisplayEnergy();
         DisplayTotalRight();
         DisplayTotalWrong();
-        
+        DisplayTimer();
+
+
         if (rightAnswerSwitch == true)
         {
             jumpToken += 1;
             totalRight += 1;
             energy += 1;
             rightAnswerSwitch = false;
+            timer += 5;
         }
 
         if (wrongAnswerSwitch == true)
@@ -69,6 +77,18 @@ public class PlayerData : MonoBehaviour {
         }	
 	}
 
+    void DisplayTimer()
+    {
+        displayTimer.text = "Time left: " + timer.ToString("00");
+        timer -= Time.deltaTime;
+
+        if (timer < 0)
+        {
+            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+            Destroy(gameObject);
+        }
+    }
+
     void DisplayJumpTokens()
     {
         jumpTokensDisplay.text = "Jump Tokens: " + jumpToken.ToString();
@@ -77,6 +97,16 @@ public class PlayerData : MonoBehaviour {
     void DisplayEnergy()
     {
         energyDisplay.text = "Energy: " + energy.ToString();
+        if (energy < 1)
+        {
+            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+            Destroy(gameObject);
+        }
+
+        if (energy > 9)
+        {
+            energy = 9;
+        }
     }
 
     void DisplayTotalRight()
