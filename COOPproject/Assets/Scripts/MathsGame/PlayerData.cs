@@ -66,7 +66,7 @@ public class PlayerData : MonoBehaviour {
             totalRight += 1;
             energy += 1;
             rightAnswerSwitch = false;
-            timer += 5;
+            timer += 2;
         }
 
         if (wrongAnswerSwitch == true)
@@ -103,9 +103,9 @@ public class PlayerData : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (energy > 9)
+        if (energy > 5)
         {
-            energy = 9;
+            energy = 5;
         }
     }
 

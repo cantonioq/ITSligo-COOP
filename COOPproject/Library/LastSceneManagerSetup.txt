@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MathsGames/mathScene2.unity
+- path: Assets/Scenes/MathsGames/mathScene3.unity
   isLoaded: 1
   isActive: 1
