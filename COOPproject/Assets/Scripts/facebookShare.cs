@@ -20,19 +20,19 @@ public class facebookShare : MonoBehaviour {
     }
 
 
-    void ShareToFacebookTester(string title, string linkParameter, string nameParameter)
+    void ShareToFacebookTester(string link, string pic, string name)
     {
         Application.OpenURL(FACEBOOK_URL + "?app_id=" + FACEBOOK_APP_ID +
 
-        "&title=" + WWW.EscapeURL(linkParameter) +
-        "&link=" + WWW.EscapeURL(linkParameter) +
-        "&description=" + WWW.EscapeURL(nameParameter));
+        "&link=" + WWW.EscapeURL(link) +
+        "&picture=" + WWW.EscapeURL(pic) +
+        "&name=" + WWW.EscapeURL(name));
     }
 
     //this function is the one attached to the facebook button in the game
     public void submitToFacebookResults()
     {
-        ShareToFacebook("","NAME", "caption", "description", "", "http://facebook.com" );
+        ShareToFacebookTester("http://mysite.com/link-to-my-game", "http://www.bizreport.com/2011/02/03/android-logo-200x200.jpg", "caption" );
         //StartCoroutine(SceneLoadDelay());
     }
 

@@ -30,6 +30,7 @@ public class PlayerData : MonoBehaviour {
     public bool rightAnswerSwitch;
     public bool wrongAnswerSwitch;
 
+    //timer variables once timer goes to zero will bring to game over scene
     public Text displayTimer;
     public float timer;
 
@@ -64,7 +65,6 @@ public class PlayerData : MonoBehaviour {
         {
             jumpToken += 1;
             totalRight += 1;
-            energy += 1;
             rightAnswerSwitch = false;
             timer += 2;
         }
@@ -74,6 +74,12 @@ public class PlayerData : MonoBehaviour {
             jumpToken -= 1;
             totalWrong += 1;
             wrongAnswerSwitch = false;
+        }
+        
+        if (totalWrong > totalRight)
+        {
+            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+            Destroy(gameObject);
         }	
 	}
 
@@ -101,11 +107,6 @@ public class PlayerData : MonoBehaviour {
         {
             SceneManager.LoadScene("gameover", LoadSceneMode.Single);
             Destroy(gameObject);
-        }
-
-        if (energy > 5)
-        {
-            energy = 5;
         }
     }
 
