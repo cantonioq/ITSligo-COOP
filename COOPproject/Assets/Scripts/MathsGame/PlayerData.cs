@@ -30,6 +30,10 @@ public class PlayerData : MonoBehaviour {
     public bool rightAnswerSwitch;
     public bool wrongAnswerSwitch;
 
+    //delays the object (including this script attached) of being destroyed
+    //this is to allow the gameOverDescriptiveText to get the values needed
+    private float delayDestroyObject = 2;
+
     //timer variables once timer goes to zero will bring to game over scene
     public Text displayTimer;
     public float timer;
@@ -59,6 +63,11 @@ public class PlayerData : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //these 2 PlayersPrefs store the values so that that the
+        //gameOverDescriptiveText has access to the values
+        PlayerPrefs.SetInt("tr", totalRight);
+        PlayerPrefs.SetInt("tw", totalWrong);
+
         DisplayJumpTokens();
         DisplayEnergy();
         DisplayTotalRight();
@@ -111,7 +120,7 @@ public class PlayerData : MonoBehaviour {
         if (energy < 1)
         {
             SceneManager.LoadScene("gameover", LoadSceneMode.Single);
-            Destroy(gameObject);
+            Destroy(gameObject);           
         }
     }
 

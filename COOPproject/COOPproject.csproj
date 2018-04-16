@@ -222,6 +222,7 @@
     <Compile Include="Assets\Scripts\MathsGame\MathPlayerController.cs" />
     <Compile Include="Assets\Scripts\MathsGame\PlayerData.cs" />
     <Compile Include="Assets\Scripts\MathsGame\RandomMusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\MathsGame\gameOverDescriptiveText.cs" />
     <Compile Include="Assets\Scripts\MathsGame\newLevelLoader.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\obstacleObject.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\rotateObject.cs" />
