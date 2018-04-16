@@ -17,6 +17,13 @@ public class newLevelLoader : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject.Find("PlayerDATA").GetComponent<PlayerData>().levelNumber += 1;
+
+        if (GameObject.Find("PlayerDATA").GetComponent<PlayerData>().energy > 3)
+        {
+            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+        }
+
         SceneManager.LoadScene("loadingScene", LoadSceneMode.Single);
     }
 }

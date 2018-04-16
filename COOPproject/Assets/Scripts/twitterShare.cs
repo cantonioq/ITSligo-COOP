@@ -15,7 +15,12 @@ public class twitterShare : MonoBehaviour {
                     "&amp;lang=" + WWW.EscapeURL(TWEET_LANGUAGE));
     }
 
-    public void twitterPost()
+    public void twitterPostTitleScreen()
+    {
+        ShareToTwitter("Math Takedown at the windows store. Learn Maths the fun way at http://wwww.google.ca");
+    }
+
+    public void twitterPostGameOverScreen()
     {
         ShareToTwitter("okokok" + TWEET_LANGUAGE);
     }

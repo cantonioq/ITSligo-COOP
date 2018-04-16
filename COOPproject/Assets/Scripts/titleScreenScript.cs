@@ -20,4 +20,9 @@ public class titleScreenScript : MonoBehaviour {
         SceneManager.LoadScene("MathematicsMenu", LoadSceneMode.Single);
     }
 
+    public void creditsClickButton()
+    {
+        SceneManager.LoadScene("credits", LoadSceneMode.Single);
+    }
+
 }
