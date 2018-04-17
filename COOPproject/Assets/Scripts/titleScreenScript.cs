@@ -25,4 +25,8 @@ public class titleScreenScript : MonoBehaviour {
         SceneManager.LoadScene("credits", LoadSceneMode.Single);
     }
 
+    public void returnToTitleScreen()
+    {
+        SceneManager.LoadScene("titleScreen", LoadSceneMode.Single);
+    }
 }
