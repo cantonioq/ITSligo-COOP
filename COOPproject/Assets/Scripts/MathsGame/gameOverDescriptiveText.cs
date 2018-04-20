@@ -56,7 +56,8 @@ public class gameOverDescriptiveText : MonoBehaviour {
     public void displayDescriptiveText()
     {
         descriptiveText.text = "You got " + rightAnwser + " correct anwsers out of " + totalAnwser + 
-            " ,giving you " + percentage + "%";
+            " ,giving you " + percentage + "%. You also got " + GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore.ToString()
+            + "points";
     }
 
     public void displayLetterGrade()

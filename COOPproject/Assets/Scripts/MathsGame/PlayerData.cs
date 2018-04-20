@@ -54,7 +54,7 @@ public class PlayerData : MonoBehaviour {
         energy = 3;
         totalRight = 0;
         totalWrong = 0;
-        timer = 60;
+        timer = 15;
 
         rightAnswerSwitch = false;
         wrongAnswerSwitch = false;        	
@@ -89,12 +89,12 @@ public class PlayerData : MonoBehaviour {
             totalWrong += 1;
             wrongAnswerSwitch = false;
         }
-        
-        if (totalWrong > totalRight)
+
+        if (jumpToken < 0)
         {
-            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
-            Destroy(gameObject);
-        }	
+            jumpToken = 0;
+        }
+        
 	}
 
     void DisplayTimer()
@@ -119,7 +119,7 @@ public class PlayerData : MonoBehaviour {
         energyDisplay.text = "Energy: " + energy.ToString();
         if (energy < 1)
         {
-            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+            SceneManager.LoadScene("gameOverNoEnergy", LoadSceneMode.Single);
             Destroy(gameObject);           
         }
     }

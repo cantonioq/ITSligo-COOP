@@ -10,8 +10,14 @@ Description:    This scripts purpose is to allow players to post their score
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HighScoreController : MonoBehaviour {
+
+    public InputField playerName;
+
+    public Text displayScore;
 
     private string secretKey = "dsjhdjshdsvf443847386sds7d67kjkajskab67637236ddsd"; // Edit this value and make sure it's the same as the one stored on the server
     public string addScoreURL = "http://antonioq.com/mathtakedown/addscore.php?"; //be sure to add a ? to your url
@@ -64,15 +70,30 @@ public class HighScoreController : MonoBehaviour {
 
     public void SubmitScore()
     {
-        StartCoroutine(PostScores("test",123));
+        StartCoroutine(PostScores(playerName.text, GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore));
         Debug.Log("going");
+        StartCoroutine(SceneLoadDelay());
+    }
+
+    IEnumerator SceneLoadDelay()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene("titleScreen");
+    }
+
+
+    public void GetTheScores()
+    {
+        StartCoroutine(GetScores());
     }
 
     // Get the scores from the MySQL DB to display in a GUIText.
     // remember to use StartCoroutine when calling this function!
     IEnumerator GetScores()
     {
-        gameObject.GetComponent<GUIText>().text = "Loading Scores";
+        //gameObject.GetComponent<GUIText>().text = "Loading Scores";
+
+        displayScore.text = "loading...";
         WWW hs_get = new WWW(highscoreURL);
         yield return hs_get;
 
@@ -82,7 +103,10 @@ public class HighScoreController : MonoBehaviour {
         }
         else
         {
-            gameObject.GetComponent<GUIText>().text = hs_get.text; // this is a GUIText that will display the scores in game.
+            //gameObject.GetComponent<GUIText>().text = hs_get.text; // this is a GUIText that will display the scores in game.
+
+            displayScore.text = hs_get.text;
+
         }
     }
 

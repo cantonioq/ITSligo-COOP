@@ -20,7 +20,7 @@ public class MathGameSelector : MonoBehaviour {
     private bool newQuestion = false;
 
     public Text displayQuestion;
-    public Text answer; //for testing will be removed
+    public Text playerScore;
     public Text rightWrongText;
 
     public InputField inputFieldAnswer;
@@ -68,7 +68,7 @@ public class MathGameSelector : MonoBehaviour {
     //for debuging will be removed later  
     void displayAnswer()
     {
-        answer.text = valueTotal.ToString();
+        playerScore.text = "Score: " + GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore.ToString();
     }
 
     private void MathGameDifficulty()
@@ -106,6 +106,20 @@ public class MathGameSelector : MonoBehaviour {
             rightWrongText.text = gotRightMessage;
 
             GameObject.Find("PlayerDATA").GetComponent<PlayerData>().rightAnswerSwitch = true;
+            if (getMathDifficulty == 1)
+            {
+                GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore += 100;
+            }
+
+            if (getMathDifficulty == 2)
+            {
+                GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore += 150;
+            }
+
+            if (getMathDifficulty == 3)
+            {
+                GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore += 200;
+            }
         }
 
         else
@@ -114,6 +128,7 @@ public class MathGameSelector : MonoBehaviour {
             rightWrongText.text = gotWrongMessage;
 
             GameObject.Find("PlayerDATA").GetComponent<PlayerData>().wrongAnswerSwitch = true;
+            GameObject.Find("HighScore DATA").GetComponent<HighScoreData>().playerScore -= 50;
         }
 
         if (getMathGame == 1)

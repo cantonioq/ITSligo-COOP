@@ -29,7 +29,8 @@ public class HighScoreData : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (SceneManager.GetActiveScene().name == "highScore")
+        if (SceneManager.GetActiveScene().name == "highScore" ||
+            SceneManager.GetActiveScene().name == "titleScreen" )
         {
             Destroy(gameObject);
         }
