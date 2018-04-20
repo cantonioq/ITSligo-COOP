@@ -1,7 +1,7 @@
 ﻿/*
 File            PlayerData.cs
 Author          Antonio Quesnel
-Date            04/05/2018  
+Date            05/04/2018  
 Version         1.0 
 Description:    This script keeps the data for variables when moving 
                 from one scene to the next, or until game over

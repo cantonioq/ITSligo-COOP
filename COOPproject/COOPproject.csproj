@@ -227,6 +227,8 @@
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\obstacleObject.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\rotateObject.cs" />
     <Compile Include="Assets\Scripts\facebookShare.cs" />
+    <Compile Include="Assets\Scripts\highscore\HighScoreController.cs" />
+    <Compile Include="Assets\Scripts\highscore\HighScoreData.cs" />
     <Compile Include="Assets\Scripts\titleScreenScript.cs" />
     <Compile Include="Assets\Scripts\twitterShare.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
