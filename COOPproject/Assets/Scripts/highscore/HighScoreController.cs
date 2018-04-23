@@ -25,6 +25,10 @@ public class HighScoreController : MonoBehaviour {
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "highScore")
+        {
+            StartCoroutine(GetScores());
+        }
         //StartCoroutine(GetScores());
     }
 

@@ -29,4 +29,9 @@ public class titleScreenScript : MonoBehaviour {
     {
         SceneManager.LoadScene("titleScreen", LoadSceneMode.Single);
     }
+
+    public void highScoreClickButton()
+    {
+        SceneManager.LoadScene("highScore", LoadSceneMode.Single);
+    }
 }
