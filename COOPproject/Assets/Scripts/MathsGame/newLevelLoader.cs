@@ -1,29 +1,23 @@
-﻿using System.Collections;
+﻿/*
+File            newLevelLoader.cs
+Author          Antonio Quesnel
+Date            02/04/2018 /DD/MM/YYYY  
+Version         1.0 
+Description:    this script allows an object with the on trigger 
+                enabled that when player collides with the object with this script
+                that it will load a new scene
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class newLevelLoader : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("PlayerDATA").GetComponent<PlayerData>().levelNumber += 1;
-
-        if (GameObject.Find("PlayerDATA").GetComponent<PlayerData>().energy > 3)
-        {
-            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
-        }
-
         SceneManager.LoadScene("loadingScene", LoadSceneMode.Single);
     }
 }

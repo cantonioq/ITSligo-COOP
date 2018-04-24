@@ -38,11 +38,6 @@ public class PlayerData : MonoBehaviour {
     public Text displayTimer;
     public float timer;
 
-    //this variable is to be used with the newLevelLoader.cs
-    //once this gets biiger than 3, the game over screen will be loaded
-    //the actual if statment is in newlevelloader
-    public int levelNumber = 0;
-
     //this variable for the awake function which allows the object which this 
     //script is attached to does not get destroyed when player goes into next scene
     public static PlayerData holder;
@@ -51,10 +46,10 @@ public class PlayerData : MonoBehaviour {
     void Start ()
     {
         jumpToken = 1;
-        energy = 3;
+        energy = 30; //default3
         totalRight = 0;
         totalWrong = 0;
-        timer = 15;
+        timer = 90; //default 60
 
         rightAnswerSwitch = false;
         wrongAnswerSwitch = false;        	

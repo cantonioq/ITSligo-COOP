@@ -15,8 +15,10 @@ public class MainMenuMusicPlayer : MonoBehaviour {
 
     public bool stopMusic;
 
-	// Use this for initialization
-	void Start () {
+    public static MainMenuMusicPlayer holder;
+
+    // Use this for initialization
+    void Start () {
 
         stopMusic = false;
 	}
@@ -38,6 +40,17 @@ public class MainMenuMusicPlayer : MonoBehaviour {
         if (stopMusic == false)
         {
             DontDestroyOnLoad(gameObject);
+        }
+
+        if (holder == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            holder = this;
+        }
+
+        else if (holder != this)
+        {
+            Destroy(gameObject);
         }
 
 

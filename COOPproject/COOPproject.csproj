@@ -89,6 +89,7 @@
     <Compile Include="Assets\Downloaded Unity Store\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\Downloaded Unity Store\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\Downloaded Unity Store\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\Downloaded Unity Store\GrassRoadRace\Script\CameraMove.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Downloaded Unity Store\SKY city lite\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Assets\Scripts\MathsGame\RandomMusicPlayer.cs" />
     <Compile Include="Assets\Scripts\MathsGame\gameOverDescriptiveText.cs" />
     <Compile Include="Assets\Scripts\MathsGame\newLevelLoader.cs" />
+    <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\levelBottomFallingCoolider.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\obstacleObject.cs" />
     <Compile Include="Assets\Scripts\MathsGame\obstacleObjects\rotateObject.cs" />
     <Compile Include="Assets\Scripts\facebookShare.cs" />

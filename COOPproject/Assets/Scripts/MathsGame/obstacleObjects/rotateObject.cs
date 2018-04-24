@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+File            rotateObject.cs
+Author          Antonio Quesnel
+Date            02/04/2018 /DD/MM/YYYY  
+Version         1.0 
+Description:    a simplt script that when attached to an object
+                allows the object to rotate on the x,y and z coordinates
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
