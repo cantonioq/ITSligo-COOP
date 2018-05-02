@@ -17,7 +17,7 @@ public class twitterShare : MonoBehaviour {
 
     public void twitterPostTitleScreen()
     {
-        ShareToTwitter("Math Takedown at the windows store. Learn Maths the fun way at http://wwww.google.ca");
+        ShareToTwitter("Math Takedown at the windows store. Learn Maths the fun way at http://www.antonioq.com/math-takedown/");
     }
 
     public void twitterPostGameOverScreen()

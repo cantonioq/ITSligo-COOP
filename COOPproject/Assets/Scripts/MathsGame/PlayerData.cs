@@ -46,10 +46,10 @@ public class PlayerData : MonoBehaviour {
     void Start ()
     {
         jumpToken = 1;
-        energy = 30; //default3
+        energy = 3; //default3
         totalRight = 0;
         totalWrong = 0;
-        timer = 90; //default 60
+        timer = 60; //default 60
 
         rightAnswerSwitch = false;
         wrongAnswerSwitch = false;        	

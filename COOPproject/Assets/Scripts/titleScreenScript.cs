@@ -34,4 +34,9 @@ public class titleScreenScript : MonoBehaviour {
     {
         SceneManager.LoadScene("highScore", LoadSceneMode.Single);
     }
+
+    public void quitClickButton()
+    {
+        Application.Quit();
+    }
 }
